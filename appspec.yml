@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /hello1.html
+    destination: /var/www/html
+hooks:
+    ApplicationStop:
+    - location: script1.sh
+      timeout: 300
+      runas: root
+    ApplicationStart:
+    - location: script2.sh
+      timeout: 300
+      runas: root
+
